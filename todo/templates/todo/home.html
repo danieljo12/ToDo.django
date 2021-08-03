@@ -1,0 +1,13 @@
+{% extends "todo/base.html" %}
+
+{% block content %}
+    
+
+    {% if user.is_authenticated %}
+        <p>Go to your todo posts here: </p> 
+        <a class="mr-2" href="{% url 'user-todos' %}">{{user.username}}</a>
+    {% else %}
+        <p>Todo app! Login now to use it! :)) </p> 
+    {% endif %}
+
+{% endblock content %}
